@@ -1,8 +1,9 @@
-import gymnasium as gym
-import numpy as np
-from gymnasium.envs.toy_text.frozen_lake import generate_random_map
-
 import time
+
+import numpy as np
+
+import gymnasium as gym
+
 
 # https://github.com/sudharsan13296/Deep-Reinforcement-Learning-With-Python/blob/master/03.%20Bellman%20Equation%20and%20Dynamic%20Programming/3.06.%20Solving%20the%20Frozen%20Lake%20Problem%20with%20Value%20Iteration.ipynb
 def show_random_agent(env):
