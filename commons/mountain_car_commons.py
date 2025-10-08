@@ -97,3 +97,10 @@ def test_policy(env, states, policy, render=True):
             break
 
     return total_reward
+
+
+def map_to_discrete_state(env, state, n_pos_bins, n_vel_bins):
+    return (
+        map_pos_value_to_bin(env, state[0], n_pos_bins),
+        map_vel_value_to_bin(env, state[1], n_vel_bins)
+    )

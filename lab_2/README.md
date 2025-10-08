@@ -7,8 +7,16 @@ Discretization params:
 
 ### Monte Carlo method results:
 
+Reward function: `potential_factor * pos_normalized + kinetic_factor * vel_normalized`
+
+`potential_factor=0.55`
+`kinetic_factor=0.45`
+`pos_normalized є [0, 1]`
+`vel_normalized є [0, 1]`
+
 | **№ Iterations** | **Total reward** |
 |------------------|------------------|
+| 5000             | -354             |
 
 ### Value iteration algorithm previous results(look Lab 1)
 
