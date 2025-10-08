@@ -2,7 +2,7 @@ import gymnasium as gym
 import numpy as np
 import tqdm
 
-from lab_1.commons import test_policy, map_pos_bin_to_value, \
+from commons.mountain_car_commons import test_policy, map_pos_bin_to_value, \
     map_vel_bin_to_value, apply_action_to_state, map_pos_value_to_bin, \
     map_vel_value_to_bin
 
