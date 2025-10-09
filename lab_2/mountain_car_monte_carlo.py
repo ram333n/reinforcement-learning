@@ -25,11 +25,12 @@ def generate_episode(env, states, q_values, epsilon, n_timesteps=250):
         action = epsilon_greedy_policy(env, discrete_state, q_values, epsilon)
         next_state, _, done, info, _ = env.step(action)
         # reward = -1 + np.abs(next_state[0] - state[0])
+        reward = combined_reward(next_state)
 
-        if done:
-            reward = 150
-        else:
-            reward = evaluate_energy(env, next_state)
+        # if done:
+        #     reward = 150
+        # else:
+        #     reward = evaluate_energy(env, next_state)
 
         episode.append((discrete_state, action, reward))
 
@@ -51,6 +52,13 @@ def evaluate_energy(env, state, kinetic_factor=0.45, potential_factor=0.55):
     vel_normalized = np.abs(velocity) / env.observation_space.high[1]
 
     return potential_factor * pos_normalized + kinetic_factor * vel_normalized
+
+
+def combined_reward(state):
+    position = state[0]
+    velocity = state[1]
+
+    return (position + 200 * velocity ** 2) - 1
 
 
 def extract_policy(env, states, q_values):
@@ -76,7 +84,7 @@ if __name__ == "__main__":
     total_reward_by_state = defaultdict(float)
     state_visits_count = defaultdict(int)
 
-    n_episodes = 5000
+    n_episodes = 20000
     n_episode_timesteps = 500
     epsilon = 0.5
     gamma = 0.99

@@ -17,6 +17,34 @@ Reward function: `potential_factor * pos_normalized + kinetic_factor * vel_norma
 | **№ Iterations** | **Total reward** |
 |------------------|------------------|
 | 5000             | -354             |
+| 10000            | -264             |
+| 15000            | -188             |
+| 20000            | -306             |
+
+
+Reward function: `-1 + np.abs(next_pos - pos)`
+
+| **№ Iterations** | **Total reward** |
+|------------------|------------------|
+| 5000             | -1000            |
+| 10000            | -1000            |
+
+Reward function: `(position + velocity ** 2) - 1`
+
+| **№ Iterations** | **Total reward** |
+|------------------|------------------|
+| 5000             | -1000            |
+| 10000            | -1000            |
+
+Reward function: `(position + 200 * velocity ** 2) - 1`
+
+| **№ Iterations** | **Total reward** |
+|------------------|------------------|
+| 5000             | -1000            |
+| 10000            | -205             |
+| 15000            | -1000            |
+| 20000            | -160             |
+
 
 ### Value iteration algorithm previous results(look Lab 1)
 
