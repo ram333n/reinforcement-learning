@@ -44,6 +44,7 @@ Reward function: `(position + 200 * velocity ** 2) - 1`
 | 10000            | -205             |
 | 15000            | -1000            |
 | 20000            | -160             |
+| 30000            | -196             |
 
 
 ### Value iteration algorithm previous results(look Lab 1)

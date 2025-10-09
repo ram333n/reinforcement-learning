@@ -84,7 +84,7 @@ if __name__ == "__main__":
     total_reward_by_state = defaultdict(float)
     state_visits_count = defaultdict(int)
 
-    n_episodes = 20000
+    n_episodes = 30000
     n_episode_timesteps = 500
     epsilon = 0.5
     gamma = 0.99
